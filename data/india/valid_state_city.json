@@ -1,0 +1,22 @@
+ {
+    "Tamil Nadu": ["Chennai", "Coimbatore"],
+    "Maharashtra": ["Pune", "Nagpur", "Mumbai"],
+    "Punjab": ["Ludhiana", "Amritsar"],
+    "Rajasthan": ["Jodhpur", "Jaipur"],
+    "West Bengal": ["Durgapur", "Kolkata"],
+    "Chhattisgarh": ["Bilaspur", "Raipur"],
+    "Delhi": ["New Delhi", "Dwarka"],
+    "Jharkhand": ["Ranchi", "Jamshedpur"],
+    "Telangana": ["Warangal", "Hyderabad"],
+    "Karnataka": ["Bangalore", "Mysore", "Mangalore"],
+    "Uttar Pradesh": ["Lucknow", "Noida"],
+    "Assam": ["Silchar", "Guwahati"],
+    "Uttarakhand": ["Dehradun", "Haridwar"],
+    "Bihar": ["Gaya", "Patna"],
+    "Gujarat": ["Ahmedabad", "Surat"],
+    "Haryana": ["Faridabad", "Gurgaon"],
+    "Andhra Pradesh": ["Visakhapatnam", "Vijayawada"],
+    "Madhya Pradesh": ["Bhopal", "Indore"],
+    "Kerala": ["Trivandrum", "Kochi"],
+    "Odisha": ["Cuttack", "Bhubaneswar"]
+}

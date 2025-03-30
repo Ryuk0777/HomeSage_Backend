@@ -1,0 +1,13 @@
+{
+    "Condominium": "High-Rise",
+    "Apartment": "High-Rise",
+    "Flat": "High-Rise",
+    "Serviced Residence": "High-Rise",
+    "Bungalow": "Landed Property",
+    "Semi-detached House": "Landed Property",
+    "Terrace House": "Landed Property",
+    "Cluster House": "Landed Property",
+    "Townhouse": "Townhouse",
+    "Residential Land": "Land",
+    "Bungalow Land": "Land"
+}

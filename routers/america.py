@@ -1,0 +1,25 @@
+from fastapi import APIRouter, HTTPException
+from schema.america import XValues
+import numpy as np
+import joblib
+import os
+
+
+def load_model(file_loaction):
+    try:
+        return joblib.load(os.getcwd() + file_loaction)
+    except FileNotFoundError:
+        return None
+
+model = load_model(r"\models\america\American_House_Price_model.joblib")
+
+router = APIRouter(prefix='/america', tags=['USA House Price Predicition'])
+
+@router.post("/predict")
+def predict_price(values:XValues):
+    if model == None:
+        raise HTTPException(detail={"Internal Server Error": 'Model not Found'}, status_code=404)
+    else:
+        price = np.expm1(model.predict(np.log1p(values.get())))[0]
+
+        return {"price": price, "Currency": "USD"}
