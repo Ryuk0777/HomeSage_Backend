@@ -2,30 +2,29 @@ from fastapi import APIRouter, HTTPException
 from schema.india import XValues
 from sklearn.preprocessing import StandardScaler
 import joblib
-import os
 import json
 
 
-with open(os.getcwd() + r"/data/india/valid_state_city.json", "r") as file:
+with open("data/india/valid_state_city.json", "r") as file:
     STATE_CITY_MAPPING = json.load(file)
 
 
 def load_scaler(file_loaction) -> StandardScaler | None:
     try:
-        return joblib.load(os.getcwd() + file_loaction)
+        return joblib.load(file_loaction)
     except FileNotFoundError:
         return None
     
 def load_model(file_loaction):
     try:
-        return joblib.load(os.getcwd() + file_loaction)
+        return joblib.load(file_loaction)
     except FileNotFoundError:
         return None
 
   
-scaler = load_scaler(r"\models\india\IndianInputScaler.joblib")
+scaler = load_scaler("models/india/IndianInputScaler.joblib")
 
-model = load_model(r"\models\india\Indian_House_Price_model.joblib")
+model = load_model("models/india/Indian_House_Price_model.joblib")
 
 
 

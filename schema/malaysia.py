@@ -2,7 +2,6 @@ from pydantic import BaseModel, Field, field_validator
 from typing import Literal
 import pandas as pd
 import json
-import os
 
 
 COLUMNS_NAME = ['Rooms', 'Bathrooms', 'Car Parks', 'Size in sq.ft',
@@ -12,7 +11,7 @@ COLUMNS_NAME = ['Rooms', 'Bathrooms', 'Car Parks', 'Size in sq.ft',
 
 
 
-with open(os.getcwd() + r"\data\malaysia\Malaysia_property_mapping.json") as f:
+with open("data/malaysia/Malaysia_property_mapping.json") as f:
     PROPERTY_MAPPING_1 = json.load(f)
 
 

@@ -1,13 +1,12 @@
 from pydantic import BaseModel, Field, field_validator
 from typing import Literal
 import pandas as pd
-import os
 import json
 
 COLUMNS_NAME = ["Zip Code", "Beds", "Baths", "Living Space", "Zip Code Population", "Zip Code Density", 
                 "Median Household Income"]
 
-with open(os.getcwd() + r"\data\america\zip_codes.json" ,'r', encoding='utf-8') as file:
+with open("data/america/zip_codes.json" ,'r', encoding='utf-8') as file:
     ZIP_CODES = json.load(file)
 
 

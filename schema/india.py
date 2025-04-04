@@ -1,10 +1,9 @@
 from pydantic import BaseModel, Field, field_validator
 from typing import Literal, Annotated, List
-import os
 import json
 import pandas as pd
 
-with open(os.getcwd() + r"\data\india\loaction.json" ,'r', encoding='utf-8') as file:
+with open("data\india\loaction.json" ,'r', encoding='utf-8') as file:
     STATE_CITY_MAPPING = json.load(file)
 
 
