@@ -3,7 +3,7 @@ from typing import Literal, Annotated, List
 import json
 import pandas as pd
 
-with open("https://raw.githubusercontent.com/Ryuk0777/HomeSage_Backend/refs/heads/main/data/india/loaction.json" ,'r', encoding='utf-8') as file:
+with open("data\india\loaction.json" ,'r', encoding='utf-8') as file:
     STATE_CITY_MAPPING = json.load(file)
 
 
