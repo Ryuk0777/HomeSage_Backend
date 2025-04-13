@@ -3,6 +3,7 @@ from schema.india import XValues
 from sklearn.preprocessing import StandardScaler
 import joblib
 import json
+import asyncio
 
 
 with open("data/india/valid_state_city.json", "r") as file:
@@ -33,7 +34,7 @@ model = load_model("models/india/Indian_House_Price_model.joblib")
 router = APIRouter(prefix='/india', tags=['India House Price Predicition'])
 
 @router.post("/predict")
-def predict_price(value: XValues):
+async def predict_price(value: XValues):
     if scaler == None:
         raise HTTPException(detail={"Internal Server Error":'scaler file not Found'}, status_code=404) 
     elif model == None:
@@ -43,9 +44,11 @@ def predict_price(value: XValues):
         raise HTTPException(detail={"Invalid Request": "Invalid state or city"}, status_code=400)
     
     else: 
+        def compute_price():
+            transformed = scaler.transform(value.get())
+            return model.predict(transformed)[0] * 100000
 
-        price = model.predict(scaler.transform(value.get()))[0] * 100000
-
-        return {"price":price, "Currency":"Rupee" }
+        price = await asyncio.to_thread(compute_price)
+        return {"price": price, "Currency": "Rupee"}
         
 
